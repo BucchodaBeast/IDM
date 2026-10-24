@@ -1,0 +1,55 @@
+{
+  "source": "IDM brochure 2026/27 fee table (fees may differ slightly for 2027). Amounts in Emalangeni (E).",
+  "application_fee": 200,
+  "other_fees": {
+    "supplementary_fee_idm_courses": 500,
+    "computer_based_invigilation_fee": 400,
+    "ipm_subscription_hr_students_only": 650
+  },
+  "ipm_programmes": ["ba-hrm", "dip-hrm"],
+  "tuition": {
+    "ba-hrm":      {"part_time": {"annual": 25830, "semester": 12915}},
+    "bsc-it":      {"full_time": {"annual": 26330, "semester": 13165}, "part_time": {"annual": 21076, "semester": 10538}},
+    "bcd":         {"full_time": {"annual": 26330, "semester": 13165}, "part_time": {"annual": 17181, "semester": 8591}},
+    "bmesl":       {"full_time": {"annual": 26330, "semester": 13165}, "part_time": {"annual": 17181, "semester": 8591}},
+    "bohs":        {"full_time": {"annual": 27330, "semester": 13665}, "part_time": {"annual": 19912, "semester": 9956}},
+    "dip-hrm":     {"full_time": {"annual": 25610, "semester": 12805}, "part_time": {"annual": 20359, "semester": 10180}},
+    "dip-ohs":     {"full_time": {"annual": 27110, "semester": 13555}, "part_time": {"annual": 21859, "semester": 10930}},
+    "dip-it":      {"full_time": {"annual": 25610, "semester": 12805}, "part_time": {"annual": 20360, "semester": 10180}},
+    "cert-freight": {"part_time": {"annual": 26520, "semester": 8840}},
+    "cert-tax":    {"part_time": {"total": 12155}},
+    "cisco-cyber": {"part_time": {"annual": 13232, "semester": 6616}},
+    "ccna1":       {"part_time": {"total": 5400}},
+    "ccna2":       {"part_time": {"total": 5600}},
+    "ccna3":       {"part_time": {"total": 5600}}
+  },
+  "itemised": {
+    "cips-l2": {
+      "notes": ["Brochure heading is 'CIPS Certificate in Procurement and Supply'; confirm whether Level 3 uses the same fees."],
+      "items": [
+        {"label": "Tuition", "amount": 13760},
+        {"label": "CIPS exam fees", "amount": 4480},
+        {"label": "CIPS membership and registration", "amount": 1695},
+        {"label": "Textbooks", "amount": 1638}
+      ]
+    },
+    "cips-l4": {
+      "notes": ["Brochure heading is 'CIPS Diploma in Procurement and Supply'."],
+      "items": [
+        {"label": "Semester 1 tuition", "amount": 10137},
+        {"label": "Semester 2 tuition", "amount": 10137},
+        {"label": "CIPS exam fees", "amount": 7578},
+        {"label": "CIPS membership and registration", "amount": 1695},
+        {"label": "Textbooks", "amount": 5100}
+      ]
+    },
+    "cips-l5": {
+      "notes": ["Exam fees depend on electives and are not included.", "Membership and registration amount is not stated in the brochure."],
+      "items": [
+        {"label": "Semester 1 (incl. textbooks)", "amount": 12258},
+        {"label": "Semester 2 (incl. textbooks)", "amount": 12258},
+        {"label": "Semester 3 (incl. textbooks)", "amount": 12258}
+      ]
+    }
+  }
+}

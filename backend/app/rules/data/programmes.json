@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "source": "IDM Eswatini Higher Education Studies brochure, 2026/27 (January/June intake)",
+    "assumptions": [
+      "pass_min (lowest grade counted as a pass) is assumed to be E. Confirm with IDM.",
+      "credit_min is C, as the brochure says 'C grade or better'.",
+      "'Diploma in a relevant qualification' routes return status 'review' so admissions decides relevance.",
+      "Diploma in IT: '3 credits in Mathematics/Physics & 2 other credits' is modelled as 5 credits with at least one in Mathematics or Physics. Confirm with IDM.",
+      "All programmes are assumed to run in both intakes unless the brochure says otherwise."
+    ]
+  },
+  "grading": {
+    "scale": ["A*", "A", "B", "C", "D", "E", "F", "G", "U"],
+    "pass_min": "E",
+    "credit_min": "C"
+  },
+  "subject_aliases": {
+    "maths": "mathematics",
+    "math": "mathematics",
+    "english": "english language",
+    "english primary language": "english language",
+    "physical sciences": "physical science",
+    "ict": "information technology",
+    "it": "information technology",
+    "d&t": "design and technology",
+    "design & technology": "design and technology",
+    "life sciences": "biology",
+    "life science": "biology"
+  },
+  "programmes": [
+    {
+      "id": "ba-hrm", "name": "Bachelor of Arts in Human Resource Management", "level": "degree", "nqf": 7,
+      "modes": [{"mode": "part_time", "duration": "2 years"}],
+      "routes": [
+        {"id": "diploma-hr", "type": "qualification", "accepts": [{"kind": "diploma", "field": "hr"}]}
+      ]
+    },
+    {
+      "id": "bsc-it", "name": "Bachelor of Science in Information Technology", "level": "degree", "nqf": 7,
+      "modes": [{"mode": "full_time", "duration": "3.5-4 years"}, {"mode": "part_time", "duration": "4.5-5 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 6, "min_credits": 5,
+         "must_credit": ["English Language", "Mathematics"],
+         "any_of": [{"subjects": ["Physical Science", "Information Technology", "Physics", "Design and Technology"], "count": 2, "min_grade": "C"}]},
+        {"id": "nsc", "type": "nsc", "admission_level": "bachelor",
+         "one_of": [
+           {"must_pass": ["Mathematics"]},
+           {"any_of": [{"subjects": ["Physical Science", "Information Technology", "Computer Applications Technology", "Computer Studies", "Design and Technology"], "count": 2}]}
+         ]},
+        {"id": "diploma-relevant", "type": "qualification", "accepts": [{"kind": "diploma", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "bmesl", "name": "Bachelor of Management in Education and School Leadership", "level": "degree", "nqf": 7,
+      "modes": [{"mode": "full_time", "duration": "4 years"}, {"mode": "part_time", "duration": "5 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 6, "min_credits": 5, "must_credit": ["English Language"]},
+        {"id": "nsc", "type": "nsc", "admission_level": "bachelor", "min_passes": 6, "must_pass": ["English Language"]},
+        {"id": "diploma-relevant", "type": "qualification", "accepts": [{"kind": "diploma", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "bohs", "name": "Bachelor in Occupational Health and Safety", "level": "degree", "nqf": 7,
+      "modes": [{"mode": "full_time", "duration": "3.5-4 years"}, {"mode": "part_time", "duration": "4.5-5 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 6, "min_credits": 5, "must_credit": ["English Language"],
+         "any_of": [{"subjects": ["Mathematics", "Biology", "Chemistry", "Physical Science", "Combined Science", "Additional Combined Science"], "count": 2, "min_grade": "C"}]},
+        {"id": "nsc", "type": "nsc", "admission_level": "bachelor", "must_pass": ["English Language"],
+         "any_of": [{"subjects": ["Physical Science", "Biology", "Geography", "Mathematics"], "count": 2}]},
+        {"id": "diploma-relevant", "type": "qualification", "accepts": [{"kind": "diploma", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "bcd", "name": "Bachelor of Community Development", "level": "degree", "nqf": 7,
+      "modes": [{"mode": "full_time", "duration": "3.5-4 years"}, {"mode": "part_time", "duration": "4.5-5 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 6, "min_credits": 5, "must_credit": ["English Language"]},
+        {"id": "nsc", "type": "nsc", "admission_level": "bachelor", "must_pass": ["English Language"]},
+        {"id": "diploma-relevant", "type": "qualification", "accepts": [{"kind": "diploma", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "dip-it", "name": "Diploma in Information Technology", "level": "diploma", "nqf": 5,
+      "modes": [{"mode": "full_time", "duration": "2 years"}, {"mode": "part_time", "duration": "3 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 5, "min_credits": 5,
+         "any_of": [{"subjects": ["Mathematics", "Physics"], "count": 1, "min_grade": "C"}],
+         "note": "Brochure wording is ambiguous; see meta.assumptions."}
+      ]
+    },
+    {
+      "id": "dip-hrm", "name": "Diploma in Human Resource Management", "level": "diploma", "nqf": 5,
+      "modes": [{"mode": "full_time", "duration": "2 years"}, {"mode": "part_time", "duration": "3 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 5, "min_credits": 3}
+      ]
+    },
+    {
+      "id": "dip-ohs", "name": "Diploma in Occupational Health and Safety", "level": "diploma", "nqf": 5,
+      "modes": [{"mode": "full_time", "duration": "2 years"}, {"mode": "part_time", "duration": "3 years"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_passes": 5, "min_credits": 3,
+         "grade_floors": {"English Language": "D"},
+         "any_of": [{"subjects": ["Mathematics", "Biology", "Chemistry", "Physical Science", "Combined Science", "Additional Combined Science"], "count": 2, "min_grade": "C"}]},
+        {"id": "nsc", "type": "nsc", "admission_level": "diploma", "must_pass": ["English Language"],
+         "any_of": [{"subjects": ["Physical Science", "Biology", "Geography", "Mathematics"], "count": 2}]},
+        {"id": "certificate-related", "type": "qualification", "accepts": [{"kind": "certificate", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "cert-freight", "name": "Certificate in Freight Forwarding and Custom Compliance", "level": "professional", "nqf": 4,
+      "modes": [{"mode": "part_time", "duration": "18 months"}],
+      "routes": [
+        {"id": "olevel", "type": "olevel", "min_credits": 4, "must_credit": ["English Language"]},
+        {"id": "nsc", "type": "nsc", "admission_level": "none", "min_passes": 4, "must_pass": ["English Language"]}
+      ]
+    },
+    {
+      "id": "cert-tax", "name": "Beginners Tax Certificate", "level": "professional",
+      "modes": [{"mode": "part_time", "duration": "12 weeks"}],
+      "routes": [{"id": "open", "type": "open"}]
+    },
+    {
+      "id": "cisco-cyber", "name": "CISCO Certificate in Cyber Security", "level": "professional",
+      "modes": [{"mode": "part_time", "duration": "6 months"}],
+      "routes": [
+        {"id": "olevel-plus-experience", "type": "olevel", "min_passes": 5,
+         "also_requires_experience": {"min_years": 0, "relevant": true}}
+      ]
+    },
+    {
+      "id": "ccna1", "name": "CISCO CCNA 1: Introduction to Networks", "level": "professional",
+      "modes": [{"mode": "part_time", "duration": "12 weeks"}],
+      "routes": [
+        {"id": "it-course", "type": "qualification", "accepts": [{"kind": "it_related_course"}]},
+        {"id": "experience", "type": "experience", "min_years": 0, "relevant": true}
+      ]
+    },
+    {
+      "id": "ccna2", "name": "CISCO CCNA 2: Switching, Routing and Wireless Essentials", "level": "professional",
+      "modes": [{"mode": "part_time", "duration": "12 weeks"}],
+      "routes": [{"id": "ccna1", "type": "qualification", "accepts": [{"kind": "cisco_ccna1"}]}]
+    },
+    {
+      "id": "ccna3", "name": "CISCO CCNA 3: Enterprise Networking, Security and Automation", "level": "professional",
+      "modes": [{"mode": "part_time", "duration": "12 weeks"}],
+      "routes": [{"id": "ccna2", "type": "qualification", "accepts": [{"kind": "cisco_ccna2"}]}]
+    },
+    {
+      "id": "cips-l2", "name": "CIPS Certificate Level 2", "level": "professional",
+      "modes": [{"mode": "full_time", "duration": "6 months"}, {"mode": "part_time", "duration": "1 year"}],
+      "routes": [{"id": "olevel", "type": "olevel", "min_passes": 5}]
+    },
+    {
+      "id": "cips-l3", "name": "CIPS Advanced Certificate Level 3", "level": "professional",
+      "modes": [{"mode": "full_time", "duration": "1 year"}, {"mode": "part_time", "duration": "1 year"}],
+      "routes": [{"id": "cips-l2", "type": "qualification", "accepts": [{"kind": "cips_level_2"}]}]
+    },
+    {
+      "id": "cips-l4", "name": "CIPS Diploma Level 4", "level": "professional",
+      "modes": [{"mode": "full_time", "duration": "1 year"}, {"mode": "part_time", "duration": "1 year"}],
+      "routes": [
+        {"id": "cips-l3", "type": "qualification", "accepts": [{"kind": "cips_level_3"}]},
+        {"id": "experience", "type": "experience", "min_years": 2},
+        {"id": "a-levels", "type": "alevel", "min_passes": 2},
+        {"id": "relevant-qualification", "type": "qualification", "accepts": [{"kind": "relevant_qualification", "field": "relevant"}]}
+      ]
+    },
+    {
+      "id": "cips-l4-3yr", "name": "CIPS Diploma Level 4 (3-year, June intake only)", "level": "professional",
+      "intakes": ["june"],
+      "modes": [{"mode": "part_time", "duration": "3 years"}],
+      "routes": [{"id": "olevel", "type": "olevel", "min_credits": 5}]
+    },
+    {
+      "id": "cips-l5", "name": "CIPS Advanced Diploma Level 5", "level": "professional",
+      "modes": [{"mode": "full_time", "duration": "1 year"}, {"mode": "part_time", "duration": "1 year"}],
+      "routes": [{"id": "cips-l4", "type": "qualification", "accepts": [{"kind": "cips_level_4"}]}]
+    },
+    {
+      "id": "cips-l6", "name": "CIPS Professional Diploma Level 6", "level": "professional",
+      "modes": [{"mode": "full_time", "duration": "1 year"}, {"mode": "part_time", "duration": "1 year"}],
+      "routes": [{"id": "cips-l5", "type": "qualification", "accepts": [{"kind": "cips_level_5"}]}]
+    }
+  ]
+}
