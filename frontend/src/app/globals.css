@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #008853;        /* IDM logo green */
+  --color-brand-deep: #00623c;
+  --color-ink: #282424;          /* IDM logo black */
+  --color-warn: #b7791f;
+  --color-ok: #008853;
+  --color-crimson: #b3202a;
+  --color-paper: #f4f7f5;
+  --color-line: #d8dfdb;
+  --color-muted: #5b6460;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --animate-float: idm-float 3.2s ease-in-out infinite;
+  --animate-shadow: idm-shadow 3.2s ease-in-out infinite;
+  @keyframes idm-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes idm-shadow {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+    50% { transform: translateX(-50%) scale(0.72); opacity: 0.16; }
+  }
+}
+
+@layer base {
+  body { font-family: var(--font-sans); background: var(--color-paper); color: var(--color-ink); }
+  h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; color: var(--color-ink); }
+  :focus-visible { outline: 3px solid var(--color-brand); outline-offset: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
