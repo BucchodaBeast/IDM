@@ -3,17 +3,27 @@ import { ESWATINI_SUBJECTS } from '@/lib/subjects';
 
 export const SUBJECTS = ESWATINI_SUBJECTS;
 
-export interface Row {
+// Type exports expected by apply/page.tsx and scholarship/page.tsx
+export interface GradeRow {
   subject: string;
   syllabus: string;
   grade: string;
 }
 
-export const emptyRows = (count = 6): Row[] =>
-  Array.from({ length: count }, () => ({ subject: '', syllabus: 'EGCSE', grade: '' }));
+export type Row = GradeRow;
 
-export const rowsToOlevel = (rows: Row[]) => {
-  return rows.filter(r => r.subject && r.grade);
+// Helper functions expected across pages
+export const createEmptyRow = (): GradeRow => ({
+  subject: '',
+  syllabus: 'EGCSE',
+  grade: '',
+});
+
+export const emptyRows = (count = 6): GradeRow[] =>
+  Array.from({ length: count }, createEmptyRow);
+
+export const rowsToOlevel = (rows: GradeRow[]) => {
+  return rows.filter((r) => r.subject && r.grade);
 };
 
 interface GradeRowProps {
@@ -37,7 +47,9 @@ export default function GradeRows({ index, subject, grade, syllabus, onChange }:
         >
           <option value="">Select Subject...</option>
           {SUBJECTS.map((subj) => (
-            <option key={subj} value={subj}>{subj}</option>
+            <option key={subj} value={subj}>
+              {subj}
+            </option>
           ))}
         </select>
       </div>
@@ -78,4 +90,4 @@ export default function GradeRows({ index, subject, grade, syllabus, onChange }:
       </div>
     </div>
   );
-}
+          }
