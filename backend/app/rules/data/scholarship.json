@@ -1,7 +1,0 @@
-{
-  "source": "IDM brochure 2026/27: Eswatini Government Scholarship. Diploma: 27 points. Degree: 30 points.",
-  "thresholds": {"diploma": 27, "degree": 30},
-  "direction": "at_least",
-  "scheme": null,
-  "todo": "The brochure gives thresholds but not the points formula (points per grade, how many subjects count). Fill 'scheme' once confirmed, e.g. {\"points\": {\"A*\": 8, ...}, \"best_n\": 6}. Until then the API returns 'scheme_not_configured'."
-}
